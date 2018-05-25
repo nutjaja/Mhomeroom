@@ -28,6 +28,7 @@
 </template>
 <script>
 export default {
+  layout: 'fullscr',
   data(){
     return{ 
       name: "Nutja",

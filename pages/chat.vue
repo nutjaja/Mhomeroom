@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Chat room</h1>
+    <h1>Chat room {{lott}} </h1>
     <div>
       <v-text-field v-model="name" label="ชื่อ"/>
       <v-text-field v-model="text" label="ข้อความ"/>
@@ -20,16 +20,21 @@ export default {
       name: '',
       text: '',
       msg: [],
+      lott: '',
     }
   }, // data
   created() {
-    this.$socket.subscribe('room39', this.onMsg)
+    this.$socket.subscribe('room39', this.onMsg)  //onMsg ตั้งชื่อให้ตรงกับ methods ด้านล่าง
+    this.$socket.subscribe('login', this.onLogin)
+    this.$socket.subscribe('lotto', this.onLotto)    
   },
   beforeDestroy() {
     this.$socket.unsubscribe('room39')
+    this.$socket.unsubscribe('login')
+    this.$socket.unsubscribe('lotto')    
   },
   methods: {
-    send() {
+    send() { 
       this.$socket.publish('room39', {
         name: this.name,
         text: this.text,
@@ -37,6 +42,14 @@ export default {
     },
     onMsg(data) {
       this.msg.unshift(data)
+      this.mis.splice(5) //ควบคุมค่าการแสดงผลแค่ 5 แต่ข้อมูลจะหายไปหมดเลย
+    },
+    onLogin(data) {
+      console.log('login=', data)
+    },
+    onLotto(data) {
+      this.lott = data
+      console.log('lotto=', data)
     },
   }, // methods
 }
