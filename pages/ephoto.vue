@@ -1,12 +1,12 @@
 <template>
     <div id="app">
         <div><video ref="video" id="video" width="440" height="280" autoplay></video></div>
-        <div><v-btn @click="capture">Take Photo</v-btn></div>
-        <div><v-btn @click="save">Take Photo</v-btn></div>
+        <div><v-btn @click="capture">Take Photo</v-btn>
+        <v-btn @click="save">Save</v-btn></div>
         <canvas ref="canvas" id="canvas" width="440" height="280"></canvas>
         <ul>
             <li v-for="c in captures">
-                <img v-bind:src="c" height="50" />
+                
             </li>
         </ul>
     </div>

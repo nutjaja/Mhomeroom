@@ -1,6 +1,8 @@
 <template>
     <div>
         <img :src="photo" alt="">
+        <v-text-field  label="บันทึกข้อมูล"/>
+        <v-btn @click="save">Save</v-btn>
     </div>
 </template>
 <script>
