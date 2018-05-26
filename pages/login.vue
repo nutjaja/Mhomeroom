@@ -38,17 +38,9 @@ export default {
       // 1. จำ user/login
       window.sessionStorage.setItem('user', JSON.stringify(res.data.user))
       // 2. ไปหน้า home
-<<<<<<< HEAD
-    //  this.$socket.publish('login', `${res.data.user.name}`)
-=======
       //  this.$socket.publish('login', `${res.data.user.name}`)
->>>>>>> 4dd7d3f775382bb8435fc58ea4603b14afd8c65f
-      this.$router.push('/home')
+      this.$router.push('/ephoto')
     },
   },
 }
-<<<<<<< HEAD
 </script>
-=======
-</script>
->>>>>>> 4dd7d3f775382bb8435fc58ea4603b14afd8c65f
