@@ -11,9 +11,9 @@
         </v-btn>
       </v-card-title>
       <v-card-text class="grey lighten-3">
-
-
-
+        <v-content>
+          <nuxt/>
+        </v-content>
       </v-card-text>
       <v-card-actions class="grey lighten-2 justify-center">
         <strong> &copy;Copyright : 2018 — VEC Group. 1 ... Date. 27/05/2018 </strong>
