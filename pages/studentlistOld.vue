@@ -21,22 +21,22 @@
 </template>
 <script>
 export default {
-    data() {
-      let students = []
-        for (let i = 1; i <= 100; i++) {
-          students.push({
-          code: ('' + i).padStart(4, '0'),
-          name: `Name${i}`,
-          room: '' + Math.ceil(i / 30),
-          })
-        }
-      return {
+  data() {
+    let students = []
+    for (let i = 1; i <= 100; i++) {
+      students.push({
+        code: ('' + i).padStart(4, '0'),
+        name: `Name${i}`,
+        room: '' + Math.ceil(i / 30),
+      })
+    }
+    return {
       students,
       room: '3',
     }
   },
-    computed: {
-        roomList(){
+  computed: {
+    roomList() {
       // for (let i = 0; i < this.students.length; i++) {
       //   if (out.indexOf(this.students[i].room) === -1) {
       //     out.push(this.students[i].room)
@@ -56,19 +56,18 @@ export default {
       //   }
       //   // return prev //อย่าลืม return
       // }, []) //[] ค่าตั้งต้น เป็นอะเรย์ []
- 
-      //reduce เป็นการวนลูปตามจำนวนข้อมูลที่มี reduce เหมือนการ sum เลข 
-            //และต้องการพารามิเตอร์ 2 ตัวคือ  function และค่าตั้งต้น(objectเปล่า ๆๆ)
-            // prev คือค่าของรอบที่แล้ว
-            return Object.keys(this.students.reduce((p, st) => {
-                p[st.room] = st.room
-                return p
-            }, {})) //ค่าตั้งต้น เป็น object
-        },
-        students2(){
-            return this.students.filter(st => st.room === this.room)
-        },
+
+      // reduce เป็นการวนลูปตามจำนวนข้อมูลที่มี reduce เหมือนการ sum เลข
+      // และต้องการพารามิเตอร์ 2 ตัวคือ  function และค่าตั้งต้น(objectเปล่า ๆๆ)
+      // prev คือค่าของรอบที่แล้ว
+      return Object.keys(this.students.reduce((p, st) => {
+        p[st.room] = st.room
+        return p
+      }, {})) // ค่าตั้งต้น เป็น object
     },
+    students2() {
+      return this.students.filter(st => st.room === this.room)
+    },
+  },
 }
 </script>
-

@@ -34,11 +34,11 @@ export default {
         { text: 'ห้อง', value: 'room' },
       ],
     }
-  },//data
+  }, // data
   computed: {
-    students(){
+    students() {
       return this.$store.state.students
-    },      
+    },
     roomList() {
       return Object.keys(this.students.reduce((p, st) => {
         p[st.room] = st.room
@@ -48,6 +48,6 @@ export default {
     students2() {
       return this.students.filter(st => st.room === this.room)
     },
-  },// computed
+  }, // computed
 }
 </script>

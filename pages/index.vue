@@ -38,7 +38,7 @@ export default {
       // 1. จำ user/login
       window.sessionStorage.setItem('user', JSON.stringify(res.data.user))
       // 2. ไปหน้า home
-    //  this.$socket.publish('login', `${res.data.user.name}`)
+      //  this.$socket.publish('login', `${res.data.user.name}`)
       this.$router.push('/home')
     },
   },
