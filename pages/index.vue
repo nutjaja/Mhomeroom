@@ -1,17 +1,60 @@
 <template>
-  <v-container>
-    <v-layout column>
-      <v-flex>
-        <v-text-field v-model="form.login" label="ชื่อผู้ใช้"/>
-      </v-flex>
-      <v-flex>
-        <v-text-field v-model="form.pass" label="รหัสผ่าน"/>
-      </v-flex>
-      <v-flex>
-        <v-btn color="primary" @click="doLogin">เข้าสู่ระบบ</v-btn>
-      </v-flex>
-    </v-layout>
-  </v-container>
+
+ <div>
+  <div id="app">
+    <v-app id="inspire">
+      <v-layout row>
+        <v-flex xs20 sm6 offset-sm3>
+          <v-card height="900px">
+            <v-toolbar color="blue" dark>
+              
+              <v-toolbar-title>
+                <h2><img src="../images/vec_logo.gif" height="50"> M-Homeroom </h2> 
+              </v-toolbar-title>
+              <v-spacer></v-spacer>
+              <v-btn icon>
+                <v-icon >touch_app</v-icon>
+              </v-btn>
+              <v-toolbar-side-icon></v-toolbar-side-icon>
+            </v-toolbar>
+            <v-list three-line>
+
+            <v-layout row> 
+                <v-flex>
+                  <big><b>::: ระบบบันทึกกิจกรรมโฮมรูมนักเรียน นักศึกษา</b></big>
+                  <hr>
+                </v-flex>
+            </v-layout>
+            <br>
+            <v-layout row> 
+              <v-flex v-for="hr in hrsave" :key="hr.id">
+                <img :src="'/files/images/' + hr.img" width="100">
+                {{hr.hrdetail}}
+
+              </v-flex>
+
+
+            </v-layout>
+
+              <table border="0" width="100%" align="center">
+                  <tr v-for="hr in hrsave" :key="hr.id">
+                      <td><img :src="'/files/images/' + hr.img" width="100"></td>
+                      <td>{{hr.hrdetail}}</td>
+                  </tr>
+              </table>
+
+            </v-list>
+          </v-card>
+        </v-flex>
+      </v-layout>
+    </v-app>
+  </div>
+
+
+
+ </div>
+
+
 </template>
 
 <script>
@@ -21,12 +64,28 @@ let blankForm = {
 }
 
 export default {
+  data1: () => ({
+      items: [
+        { title: 'Click Me' },
+        { title: 'Click Me' },
+        { title: 'Click Me' },
+        { title: 'Click Me 2' }
+      ]
+    }),
+
   layout: 'public',
   data() {
     return {
       form: JSON.parse(JSON.stringify(blankForm)),
+      hrsave: [],
     }
   },
+
+  async created(){
+    let res = await this.$http.get('/display/display')
+    this.hrsave = res.data.hr
+  },
+
   methods: {
     async doLogin() {
       let res = await this.$http.post('/login', this.form)
@@ -42,5 +101,6 @@ export default {
       this.$router.push('/home')
     },
   },
+
 }
 </script>
