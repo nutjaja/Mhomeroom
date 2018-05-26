@@ -33,7 +33,7 @@ export default {
   },
   computed: {
     filteredStudent() {
-      return this.students.filter(x => x.class + '' === this.cls)
+      return this.students.filter(x => x.room + '' === this.cls)
     },
   },
   async created() {

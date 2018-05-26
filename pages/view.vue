@@ -13,6 +13,8 @@ export default {
     created(){
        let photo = window.localStorage.getItem('photo')
        if (photo){
+           let ph = photo.substring(0,',',1)
+            console.log('enc', ph)
            this.photo = photo
        }
     }
