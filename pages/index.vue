@@ -17,17 +17,22 @@
             <hr>
           </v-flex>
         </v-layout>
+        <br><center>
+          <img src="../images/pic1.jpg" width="100%">
+        </center>
         <br>
         <table border="0" width="100%" align="center">
           <tr v-for="hr in hrsave" :key="hr.id">
             <td align="center" width="120"><img :src="'/files/images/' + hr.img" width="120"></td>
-            <td valign="top"><font class="body-2"><b>&nbsp;&nbsp;&nbsp; {{hr.hrdetail}}</b></font></td>
+            <td valign="top"><font class="body-2">&nbsp;&nbsp;&nbsp; {{hr.hrdetail}}</font></td>
           </tr>
         </table>
-
+        <center>
+          <img src="../images/pic3.png" width="100">
+        </center>
       </v-card-text>
       <v-card-actions class="grey lighten-2 justify-center">
-        <strong> &copy;Copyright : 2018 — VEC Group. 1 ... Date. 27/05/2018 </strong>
+        <strong> &copy;Copyright : 2018 — VEC Group. 1 </strong>
       </v-card-actions>
     </v-card>
   </v-footer>
@@ -42,15 +47,6 @@ let blankForm = {
 }
 
 export default {
-  data1: () => ({
-    items: [
-      { title: 'Click Me' },
-      { title: 'Click Me' },
-      { title: 'Click Me' },
-      { title: 'Click Me 2' },
-    ],
-  }),
-
   layout: 'public',
   data() {
     return {

@@ -20,6 +20,7 @@
           </v-flex>
         </v-layout>
         <br>
+        <img src="../images/pic2.png" width="100%">
 
 
     <v-layout column>
@@ -30,13 +31,15 @@
         <v-text-field v-model="form.pass" label="รหัสผ่าน"/>
       </v-flex>
       <v-flex>
-        <v-btn color="primary" @click="doLogin">เข้าสู่ระบบ</v-btn>
+        <center><v-btn color="primary" @click="doLogin">เข้าสู่ระบบ</v-btn></center>
       </v-flex>
     </v-layout>
+    <br>
+    <br><br><br>
 
       </v-card-text>
       <v-card-actions class="grey lighten-2 justify-center">
-        <strong> &copy;Copyright : 2018 — VEC Group. 1 ... Date. 27/05/2018 </strong>
+        <strong> &copy;Copyright : 2018 — VEC Group. 1</strong>
       </v-card-actions>
     </v-card>
   </v-footer>
