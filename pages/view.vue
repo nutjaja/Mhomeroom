@@ -12,7 +12,7 @@ export default {
       photo: '/icon.png',
            
        }
-    }
+    },
 
     created(){
        let photo = window.localStorage.getItem('photo')
