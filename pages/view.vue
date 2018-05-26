@@ -10,10 +10,10 @@ export default {
   data() {
     return {
       photo: '/icon.png',
-           this.photo = photo
+           
        }
     }
-}
+
     created(){
        let photo = window.localStorage.getItem('photo')
        if (photo){
@@ -21,5 +21,7 @@ export default {
             console.log('enc', ph)
            this.photo = photo
        }
+    }
+}
 
 </script>
