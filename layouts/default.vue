@@ -1,18 +1,27 @@
 <template>
-  <v-app>
-    <v-navigation-drawer v-model="drawer" app right/>
-    <v-toolbar app>
-      <v-toolbar-title>Welcome 
-        {{ user.name }} 
-        {{ online ? 'ONLINE' : 'OFFLINE'}}
-      </v-toolbar-title>
-      <v-spacer/>
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"/>
-    </v-toolbar>
-    <v-content>
-      <nuxt/> 
-    </v-content>
-  </v-app>
+ <div>
+
+  <v-footer height="auto">
+    <v-card flat tile class="flex">
+      <v-card-title class="blue darken-4 white--text">
+        <strong class="subheading"><h1><img src="../images/vec_logo.gif" height="50"> M-Homeroom </h1></strong>
+        <v-spacer></v-spacer>
+        <v-btn icon to="/">
+          <v-icon color="white">touch_app</v-icon><font color="white"> Logout .</font>
+        </v-btn>
+      </v-card-title>
+      <v-card-text class="grey lighten-3">
+
+
+
+      </v-card-text>
+      <v-card-actions class="grey lighten-2 justify-center">
+        <strong> &copy;Copyright : 2018 — VEC Group. 1 ... Date. 27/05/2018 </strong>
+      </v-card-actions>
+    </v-card>
+  </v-footer>
+
+</div>
 </template>
 
 <script>

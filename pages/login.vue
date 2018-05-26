@@ -1,30 +1,41 @@
 <template>
- <div>
 
-  <v-footer height="auto" xs12 lg6>
+<div>
+
+  <v-footer height="auto">
     <v-card flat tile class="flex">
       <v-card-title class="blue darken-4 white--text">
         <strong class="subheading"><h1><img src="../images/vec_logo.gif" height="50"> M-Homeroom </h1></strong>
         <v-spacer></v-spacer>
-        <v-btn icon to="/login">
+        <v-btn icon to="/">
           <v-icon color="white">touch_app</v-icon>
         </v-btn>
       </v-card-title>
       <v-card-text class="grey lighten-3">
 
-        <v-layout row> 
+       <v-layout row> 
           <v-flex >
             <big class="subheading" ><b>::: ระบบบันทึกกิจกรรมโฮมรูมนักเรียน นักศึกษา</b></big>
             <hr>
           </v-flex>
         </v-layout>
         <br>
-        <table border="0" width="100%" align="center">
-          <tr v-for="hr in hrsave" :key="hr.id">
-            <td align="center" width="120"><img :src="'/files/images/' + hr.img" width="120"></td>
-            <td valign="top"><font class="body-2"><b>&nbsp;&nbsp;&nbsp; {{hr.hrdetail}}</b></font></td>
-          </tr>
-        </table>
+
+
+    <v-layout column>
+      <v-flex>
+        <v-text-field v-model="form.login" label="ชื่อผู้ใช้"/>
+      </v-flex>
+      <v-flex>
+        <v-text-field v-model="form.pass" label="รหัสผ่าน"/>
+      </v-flex>
+      <v-flex>
+        <v-btn color="primary" @click="doLogin">เข้าสู่ระบบ</v-btn>
+      </v-flex>
+    </v-layout>
+
+
+
 
       </v-card-text>
       <v-card-actions class="grey lighten-2 justify-center">
@@ -43,28 +54,12 @@ let blankForm = {
 }
 
 export default {
-  data1: () => ({
-      items: [
-        { title: 'Click Me' },
-        { title: 'Click Me' },
-        { title: 'Click Me' },
-        { title: 'Click Me 2' }
-      ]
-    }),
-
   layout: 'public',
   data() {
     return {
       form: JSON.parse(JSON.stringify(blankForm)),
-      hrsave: [],
     }
   },
-
-  async created(){
-    let res = await this.$http.get('/display/display')
-    this.hrsave = res.data.hr
-  },
-
   methods: {
     async doLogin() {
       let res = await this.$http.post('/login', this.form)
@@ -76,10 +71,9 @@ export default {
       // 1. จำ user/login
       window.sessionStorage.setItem('user', JSON.stringify(res.data.user))
       // 2. ไปหน้า home
-    //  this.$socket.publish('login', `${res.data.user.name}`)
-      this.$router.push('/home')
+      //  this.$socket.publish('login', `${res.data.user.name}`)
+      this.$router.push('/ephoto')
     },
   },
-
 }
 </script>
