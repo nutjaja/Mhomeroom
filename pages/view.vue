@@ -21,6 +21,11 @@ export default {
             console.log('enc', ph)
            this.photo = photo
        }
+    },
+    methods: {
+        save(){
+            this.$router.push('/checkin')
+        }
     }
 }
 
