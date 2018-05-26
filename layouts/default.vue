@@ -2,7 +2,10 @@
   <v-app>
     <v-navigation-drawer v-model="drawer" app right/>
     <v-toolbar app>
-      <v-toolbar-title>Welcome {{ user.name }} </v-toolbar-title>
+      <v-toolbar-title>Welcome 
+        {{ user.name }} 
+        {{ online ? 'ONLINE' : 'OFFLINE'}}
+      </v-toolbar-title>
       <v-spacer/>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"/>
     </v-toolbar>

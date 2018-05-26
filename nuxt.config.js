@@ -30,10 +30,16 @@ module.exports = {
   ],
   loading: { color: '#3B8070' },
   manifest: {
+    name: 'ระบบบันทึกการโฮมรูม',
+    short_name: 'M-Homeroom',
     theme_color: '#3B8070',
   },
+  icon: {
+    iconSrc: 'static/icon.png',
+    sizes: [32, 64, 96, 192, 256, 512, 1024]
+  },
   head: {
-    title: 'APP TITLE',
+    title: 'ระบบบันทึกการโฮมรูม',
     meta: [
       { charset: 'utf-8' },
       { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
