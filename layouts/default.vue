@@ -29,7 +29,7 @@ export default {
   computed: {
     user() { // สร้าง user ขึ้นมา สามารถนำไปใส่หน้าอื่น ๆ ได้
       return this.$store.state.user
-    },    
+    },
     online: {
       get() {
         return this.$store.state.online
@@ -49,12 +49,12 @@ export default {
   },
 
   async created() {
-  //      this.$sture.commit('setUser', {}) // save user    
-      let ok = await this.$store.dispatch('loadUser') //losd user
-      if(!ok){
-        return this.$router.replace('/') // replace ไปหน้า login
-      }
-  },// created
+  //      this.$sture.commit('setUser', {}) // save user
+    let ok = await this.$store.dispatch('loadUser') // losd user
+    if (!ok) {
+      return this.$router.replace('/') // replace ไปหน้า login
+    }
+  }, // created
 
   mounted() {
     this.$store.commit('setOnline', window.navigator.onLine)

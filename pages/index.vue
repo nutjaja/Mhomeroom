@@ -1,6 +1,5 @@
 <template>
  <div>
-
   <v-footer height="auto" xs12 lg6>
     <v-card flat tile class="flex">
       <v-card-title class="blue darken-4 white--text">
@@ -44,13 +43,13 @@ let blankForm = {
 
 export default {
   data1: () => ({
-      items: [
-        { title: 'Click Me' },
-        { title: 'Click Me' },
-        { title: 'Click Me' },
-        { title: 'Click Me 2' }
-      ]
-    }),
+    items: [
+      { title: 'Click Me' },
+      { title: 'Click Me' },
+      { title: 'Click Me' },
+      { title: 'Click Me 2' },
+    ],
+  }),
 
   layout: 'public',
   data() {
@@ -60,7 +59,7 @@ export default {
     }
   },
 
-  async created(){
+  async created() {
     let res = await this.$http.get('/display/display')
     this.hrsave = res.data.hr
   },
@@ -76,7 +75,7 @@ export default {
       // 1. จำ user/login
       window.sessionStorage.setItem('user', JSON.stringify(res.data.user))
       // 2. ไปหน้า home
-    //  this.$socket.publish('login', `${res.data.user.name}`)
+      //  this.$socket.publish('login', `${res.data.user.name}`)
       this.$router.push('/home')
     },
   },

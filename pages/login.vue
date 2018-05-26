@@ -34,9 +34,6 @@
       </v-flex>
     </v-layout>
 
-
-
-
       </v-card-text>
       <v-card-actions class="grey lighten-2 justify-center">
         <strong> &copy;Copyright : 2018 — VEC Group. 1 ... Date. 27/05/2018 </strong>
