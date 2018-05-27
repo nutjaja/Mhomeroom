@@ -3,7 +3,7 @@
   <v-footer height="auto" xs12 lg6>
     <v-card flat tile class="flex">
       <v-card-title class="blue darken-4 white--text">
-        <strong class="subheading"><h1><img src="../images/vec_logo.gif" height="50"> M-Homeroom </h1></strong>
+        <strong class="subheading"><h1><img src="/images/vec_logo.gif" height="50"> M-Homeroom </h1></strong>
         <v-spacer></v-spacer>
         <v-btn icon to="/login">
           <v-icon color="white">touch_app</v-icon>
@@ -18,7 +18,7 @@
           </v-flex>
         </v-layout>
         <br><center>
-          <img src="../images/pic1.jpg" width="100%">
+          <img src="/images/pic1.jpg" width="100%">
         </center>
         <br>
         <table border="0" width="100%" align="center">
@@ -28,7 +28,7 @@
           </tr>
         </table>
         <center>
-          <img src="../images/pic3.png" width="100">
+          <img src="/images/pic3.png" width="100">
         </center>
       </v-card-text>
       <v-card-actions class="grey lighten-2 justify-center">

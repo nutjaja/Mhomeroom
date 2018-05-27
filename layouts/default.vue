@@ -4,7 +4,7 @@
   <v-footer height="auto">
     <v-card flat tile class="flex">
       <v-card-title class="blue darken-4 white--text">
-        <strong class="subheading"><h1><img src="../images/vec_logo.gif" height="50"> M-Homeroom </h1></strong>
+        <strong class="subheading"><h1><img src="/images/vec_logo.gif" height="50"> M-Homeroom </h1></strong>
         <v-spacer></v-spacer>
         <v-btn icon to="/">
           <v-icon color="white">touch_app</v-icon><font color="white"> Logout .</font>
